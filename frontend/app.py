@@ -3,7 +3,7 @@
 from flask import Flask, render_template
 
 
-app = Flask(__name__, static_url_path='', static_folder='../frontend', template_folder='../frontend')
+app = Flask(__name__, static_url_path='', static_folder='www', template_folder='www')
 
 
 @app.route('/', methods=['GET'])
