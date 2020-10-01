@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd $(dirname "$0"); pwd
+cd $(dirname "$0")
 
 nohup python3 ./backend/app.py   > ./backend/app.log   2>&1 &
 echo "Backend $(ps -f | grep 'backend/app.py' | grep -v grep | awk '{print $2}')" > ./process.pid
