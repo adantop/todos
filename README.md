@@ -2,7 +2,7 @@
 
 cd frontend
 docker image build -t todo_frontend:0.0.1 .
-docker run --name frontend -d -p 5001:5001 todo_frontend:0.0.1
+docker run --name frontend -d -p 5001:5000 todo_frontend:0.0.1
 
 
 cd ../backend

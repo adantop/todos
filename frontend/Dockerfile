@@ -20,6 +20,6 @@ RUN pip install -r /frontend/requirements.txt
 
 WORKDIR /frontend
 
-EXPOSE 5001
+EXPOSE 5000
 
 ENTRYPOINT [ "python3", "app.py" ]
