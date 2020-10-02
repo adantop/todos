@@ -1,12 +1,14 @@
-#!/bin/env python3
+#!/usr/bin/python3
 
 import uuid
 
 
 class TodoService:
-    todos = [
-        {'id': uuid.uuid1(), 'text': 'Study Python'}
-    ]
+
+    def __init__(self):
+        self.todos = [
+            {'id': uuid.uuid1(), 'text': 'Study Python'}
+        ]
 
     def get_todos(self) -> list:
         return self.todos
