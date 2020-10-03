@@ -27,7 +27,7 @@ def todos():
         todos = [svc.del_todo(loads(request.data)['text'])]
     elif request.method == 'OPTIONS':
         return cors_preflight()
-    
+
     response = make_response({'status': 'success', 'todos': todos}, 200)
     response.headers.add('Content-Type', 'application/json')
     response.headers.add('Access-Control-Allow-Origin', '*')

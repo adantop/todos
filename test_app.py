@@ -2,7 +2,6 @@
 
 import app
 import json
-import re
 import pytest
 
 
@@ -15,7 +14,7 @@ def client():
 
 def test_cors_preflight(client):
     rv = client.options('/api/todos')
-    assert 'Access-Control-Allow-Origin'  in rv.headers
+    assert 'Access-Control-Allow-Origin' in rv.headers
     assert 'Access-Control-Allow-Headers' in rv.headers
     assert 'Access-Control-Allow-Methods' in rv.headers
 

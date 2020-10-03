@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 
 from todo import TodoService
-import pytest
 
 
 def test_create_service():
