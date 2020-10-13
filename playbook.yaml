@@ -1,0 +1,21 @@
+---
+- name: Run backend
+  hosts:
+  - localhost
+  tasks:
+  - name: Build Docker image
+    docker_image:
+      name: backend
+      tag: 0.0.1
+      source: build
+      build:
+        pull: no
+        path: .
+  - name: Run Docker container
+    docker_container:
+      name: backend
+      image: backend:0.0.1
+      state: started
+      recreate: yes
+      ports:
+        - "5000:5000"
