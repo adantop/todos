@@ -7,7 +7,7 @@ class TodoService:
 
     def __init__(self):
         self.todos = [
-            {'id': uuid.uuid1(), 'text': 'Study Python'}
+            #{'id': uuid.uuid1(), 'text': 'Study Python'}
         ]
 
     def get_todos(self) -> list:
