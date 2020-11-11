@@ -1,12 +1,12 @@
 #!/bin/env python3
 
 from flask import Flask, request, make_response
-from todo import TodoService
+from todo import TodoService, URL, DB 
 from json import loads
 
 
 app = Flask(__name__)
-svc = TodoService()
+svc = TodoService(URL.format(db=DB))
 
 
 def cors_preflight():
