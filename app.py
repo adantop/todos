@@ -3,14 +3,14 @@
 import os
 from yaml import safe_load
 from flask import Flask, request, make_response
-from todo import TodoService, URL
+from todo import TodoService
 from json import loads
 
 
-def main():
+def get_app(test: bool):
     app = Flask(__name__)
-    db = safe_load(open(os.path.join(os.path.dirname(__file__), "db.yaml")))
-    svc = TodoService(URL.format(db=db))
+
+    svc = TodoService(test)
 
     def cors_preflight():
         response = make_response()
@@ -36,8 +36,10 @@ def main():
         response.headers.add('Access-Control-Allow-Origin', '*')
 
         return response
+    
+    return app
 
-    app.run('0.0.0.0')
 
 if __name__ == '__main__':
-    main()
+    app = get_app(test=False)
+    app.run('0.0.0.0')

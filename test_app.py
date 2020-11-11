@@ -1,14 +1,13 @@
-#!/usr/bin/python3
-
-import app
+from app import get_app
 import json
 import pytest
 
 
 @pytest.fixture
 def client():
-    app.app.config['TESTING'] = True
-    with app.app.test_client() as client:
+    app = get_app(test=True)
+    app.config['TESTING'] = True
+    with app.test_client() as client:
         yield client
 
 
