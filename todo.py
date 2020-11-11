@@ -1,5 +1,7 @@
 import uuid
 import json
+import os
+from yaml import safe_load
 from collections.abc import Iterable
 from sqlalchemy import create_engine, Column, String
 from sqlalchemy.orm import sessionmaker, relationship
@@ -50,7 +52,8 @@ class TodoService:
 
 
 def main():
-    svc = TodoService(URL.format(db=DB))
+    db = safe_load(open(os.path.join(os.path.dirname(__file__), "db.yaml")))
+    svc = TodoService(URL.format(db=db))
     # svc.createTodos([
     #     "Go to Gym!",
     #     "Study Python"])
