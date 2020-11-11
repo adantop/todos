@@ -1,5 +1,5 @@
 
-from todo import TodoService, Todo
+from todo import TodoService
 from datetime import datetime
 
 url = 'sqlite:///:memory:'
