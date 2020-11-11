@@ -1,14 +1,11 @@
 import uuid
 import json
-import os
-from yaml import safe_load
 from collections.abc import Iterable
 from sqlalchemy import create_engine, Column, String
 from sqlalchemy.orm import sessionmaker, relationship
 from sqlalchemy.ext.declarative import declarative_base
 
 
-DB = safe_load(open(os.path.join(os.path.dirname(__file__), "db.yaml")))
 URL = 'mysql+pymysql://{db[user]}:{db[password]}@{db[host]}/{db[database]}'
 
 
